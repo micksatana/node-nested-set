@@ -6,7 +6,7 @@
 
 ## Installation
 ```
-npm install ts-node-nested-set
+npm install ts-nested-set
 ```
 
 ## Features
@@ -25,16 +25,76 @@ npm install ts-node-nested-set
 
 ### Examples
 
-```
-import {NestedSetNode} from '../../lib/nested-set-node';
+#### Use NestedSetNode directly
 
-let root = new NestedSetNode(),
-  nodeA = new NestedSetNode('Node A'),
-  nodeB = new NestedSetNode('Node B', 0, 1, 1, root),
-  nodeC = new NestedSetNode('Node C');
+```
+import {NestedSetNode} from 'ts-nested-set';
+
+let root = new NestedSetNode('Root'),
+    nodeA = new NestedSetNode('Node A'),
+    nodeB = new NestedSetNode('Node B', 0, 1, 1, root),
+    nodeC = new NestedSetNode('Node C');
 
 root.prepend(nodeA);
 root.append(nodeC);
+
+console.log('Root properties', root.toNestedSetProperties());
+console.log('Node A properties', nodeA.toNestedSetProperties());
+console.log('Node B properties', nodeB.toNestedSetProperties());
+console.log('Node C properties', nodeC.toNestedSetProperties());
+
+console.log('Flatten as an array', root.flat());
+```
+
+#### Extends NestedSetNode
+```
+import {NestedSetNode, NestedSetProperties} from 'ts-nested-set';
+
+interface MenuProperties {
+    menu_name: string;
+    menu_lft: number;
+    menu_rgt: number;
+    menu_depth: number;
+}
+
+class NestedSetMenu extends NestedSetNode {
+
+    static parseRow(props: NestedSetProperties): MenuProperties {
+        return {
+            menu_name: props.title,
+            menu_lft: props.left,
+            menu_rgt: props.right,
+            menu_depth: props.depth
+        };
+    }
+
+    constructor(menu_name: string) {
+        super(menu_name);
+    }
+
+    public toRow(): MenuProperties {
+        return NestedSetMenu.parseRow(this.toNestedSetProperties());
+    }
+
+    public toRows(): MenuProperties[] {
+        let props: NestedSetProperties[] = super.flat(),
+            rows: MenuProperties[];
+
+        rows = props.map((row) => {
+            return NestedSetMenu.parseRow(row);
+        });
+
+        return rows;
+    }
+}
+
+let menuA = new NestedSetMenu('Menu A'),
+    menuA1 = new NestedSetMenu('Menu A1');
+
+menuA.append(menuA1);
+
+console.log('Menu A', menuA.toRow());
+console.log('Menu A flatten it self and all children to rows', menuA.toRows());
 ```
 
 ### License
