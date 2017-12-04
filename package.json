@@ -1,14 +1,13 @@
 {
   "name": "nested-set",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Nested Set model implementation for Node.js written in TypeScript",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "clean": "del-cli dist",
-    "codecov": "codecov",
-    "coverage": "nyc --reporter=json --reporter=text-summary mocha",
-    "coverage:remap": "remap-istanbul -i coverage/coverage-final.json -o coverage/coverage-final.json",
+    "codecov": "codecov -t d9a5a49a-345e-40bf-a22a-7884b47c7924",
+    "coverage": "nyc --reporter=html --reporter=text-summary mocha",
     "lint": "tslint -p . -p test",
     "lint:fix": "tslint -p . -p test --fix",
     "prebuild": "npm run clean && npm run lint",
@@ -16,9 +15,8 @@
     "prepush": "npm run build && npm run coverage",
     "pretest": "npm run build",
     "release": "npm run build && npm publish --access public",
-    "test": "nyc --reporter=html --reporter=text-summary mocha",
-    "test:watch": "mocha --watch-extensions ts --watch",
-    "travis:test": "npm run build && npm run coverage && npm run coverage:remap"
+    "test": "nyc --reporter=lcov --reporter=text-summary mocha",
+    "test:watch": "mocha --watch-extensions ts --watch"
   },
   "nyc": {
     "per-file": true,
