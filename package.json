@@ -1,0 +1,69 @@
+{
+  "name": "nested-set",
+  "version": "0.0.1",
+  "description": "Nested Set model implementation for Node.js written in TypeScript",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "del-cli dist",
+    "codecov": "codecov",
+    "coverage": "nyc --reporter=json --reporter=text-summary mocha",
+    "coverage:remap": "remap-istanbul -i coverage/coverage-final.json -o coverage/coverage-final.json",
+    "lint": "tslint -p . -p test",
+    "lint:fix": "tslint -p . -p test --fix",
+    "prebuild": "npm run clean && npm run lint",
+    "precommit": "npm run lint",
+    "prepush": "npm run build && npm run coverage",
+    "pretest": "npm run build",
+    "release": "npm run build && npm publish --access public",
+    "test": "nyc --reporter=html --reporter=text-summary mocha",
+    "test:watch": "mocha --watch-extensions ts --watch",
+    "travis:test": "npm run build && npm run coverage && npm run coverage:remap"
+  },
+  "nyc": {
+    "per-file": true,
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "include": [
+      "lib/**/*.ts"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "lib/nested-set-properties.ts"
+    ],
+    "require": [
+      "ts-node/register",
+      "source-map-support/register"
+    ],
+    "cache": true,
+    "all": true
+  },
+  "keywords": [
+    "Nested Set"
+  ],
+  "author": "Satana Charuwichitratana <micksatana@live.com> (http://www.micksatana.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^4.0.7",
+    "@types/mocha": "^2.2.44",
+    "@types/sinon": "^4.0.0",
+    "chai": "^4.1.2",
+    "codecov": "^3.0.0",
+    "del-cli": "^1.1.0",
+    "husky": "^0.14.3",
+    "istanbul": "^0.4.5",
+    "mocha": "^4.0.1",
+    "nyc": "^11.3.0",
+    "remap-istanbul": "^0.9.5",
+    "sinon": "^4.1.2",
+    "source-map-support": "^0.5.0",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "@types/node": "^8.0.54"
+  }
+}
