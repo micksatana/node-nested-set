@@ -1,5 +1,5 @@
 {
-  "name": "nested-set",
+  "name": "ts-nested-set",
   "version": "1.0.0",
   "description": "Nested Set model implementation for Node.js written in TypeScript",
   "main": "dist/index.js",
@@ -38,6 +38,10 @@
     "cache": true,
     "all": true
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micksatana/node-nested-set.git"
+  },
   "keywords": [
     "Nested Set"
   ],
@@ -54,7 +58,6 @@
     "istanbul": "^0.4.5",
     "mocha": "^4.0.1",
     "nyc": "^11.3.0",
-    "remap-istanbul": "^0.9.5",
     "sinon": "^4.1.2",
     "source-map-support": "^0.5.0",
     "ts-node": "^3.3.0",
