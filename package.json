@@ -15,7 +15,7 @@
     "prepush": "npm run build && npm run coverage",
     "pretest": "npm run build",
     "release": "npm run build && npm publish --access public",
-    "test": "nyc --reporter=lcov --reporter=text-summary mocha",
+    "test": "nyc --reporter=lcov --reporter=text-summary mocha --exit",
     "test:watch": "mocha --watch-extensions ts --watch"
   },
   "nyc": {
