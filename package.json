@@ -7,7 +7,7 @@
     "build": "tsc",
     "clean": "del-cli dist",
     "codecov": "codecov -t d9a5a49a-345e-40bf-a22a-7884b47c7924",
-    "coverage": "nyc --reporter=html --reporter=text-summary mocha",
+    "coverage": "nyc --reporter=html --reporter=text-summary mocha --exit",
     "lint": "tslint -p . -p test",
     "lint:fix": "tslint -p . -p test --fix",
     "prebuild": "npm run clean && npm run lint",
