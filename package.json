@@ -40,7 +40,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/micksatana/node-nested-set.git"
+    "url": "git+https://github.com/intocode-io/node-nested-set.git"
   },
   "keywords": [
     "Nested Set"
