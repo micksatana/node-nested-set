@@ -62,3 +62,6 @@ typings/
 
 # Built
 dist
+
+# MacOS
+.DS_Store
