@@ -1,5 +1,5 @@
 {
-  "name": "ts-nested-set",
+  "name": "@intocode-io/ts-nested-set",
   "version": "1.0.7",
   "description": "Nested Set model implementation for Node.js written in TypeScript",
   "main": "dist/index.js",
