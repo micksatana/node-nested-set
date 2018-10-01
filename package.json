@@ -10,16 +10,16 @@
     "coverage": "nyc --reporter=html --reporter=text-summary mocha --exit",
     "lint": "tslint -p . -p test",
     "lint:fix": "tslint -p . -p test --fix",
+    "prebuild": "npm run clean && npm run lint",
+    "pretest": "npm run build",
     "release": "npm run build && npm publish --access public",
     "test": "nyc --reporter=lcov --reporter=text-summary mocha --exit",
     "test:watch": "mocha --watch-extensions ts --watch"
   },
   "husky": {
     "hooks": {
-      "pre-build": "npm run clean && npm run lint",
       "pre-commit": "npm run lint",
-      "pre-push": "npm run build && npm run coverage",
-      "pre-test": "npm run build"
+      "pre-push": "npm run build && npm run coverage"
     }
   },
   "nyc": {
