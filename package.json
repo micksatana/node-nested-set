@@ -1,6 +1,6 @@
 {
   "name": "@intocode-io/ts-nested-set",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Nested Set model implementation for Node.js written in TypeScript",
   "main": "dist/index.js",
   "scripts": {
@@ -52,22 +52,22 @@
   "author": "Satana Charuwichitratana <micksatana@live.com> (http://www.micksatana.com)",
   "license": "MIT",
   "devDependencies": {
-    "@types/chai": "^4.1.6",
+    "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.5",
-    "@types/sinon": "^5.0.2",
+    "@types/sinon": "^5.0.6",
     "chai": "^4.2.0",
     "del-cli": "^1.1.0",
-    "husky": "^1.0.1",
+    "husky": "^1.1.4",
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
-    "nyc": "^13.0.1",
-    "sinon": "^6.3.4",
+    "nyc": "^13.1.0",
+    "sinon": "^7.1.1",
     "source-map-support": "^0.5.9",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
-    "typescript": "^3.1.1"
+    "typescript": "^3.1.6"
   },
   "dependencies": {
-    "@types/node": "^10.11.3"
+    "@types/node": "^10.12.9"
   }
 }
