@@ -1,12 +1,11 @@
 {
   "name": "@intocode-io/ts-nested-set",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Nested Set model implementation for Node.js written in TypeScript",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "clean": "del-cli dist",
-    "codecov": "codecov -t d9a5a49a-345e-40bf-a22a-7884b47c7924",
     "coverage": "nyc --reporter=html --reporter=text-summary mocha --exit",
     "lint": "tslint -p . -p test",
     "lint:fix": "tslint -p . -p test --fix",
@@ -52,22 +51,21 @@
   "author": "Satana Charuwichitratana <micksatana@live.com> (http://www.micksatana.com)",
   "license": "MIT",
   "devDependencies": {
-    "@types/chai": "^4.1.7",
-    "@types/mocha": "^5.2.6",
-    "@types/sinon": "^7.0.10",
+    "@types/chai": "^4.2.2",
+    "@types/mocha": "^5.2.7",
+    "@types/sinon": "^7.0.13",
     "chai": "^4.2.0",
-    "del-cli": "^1.1.0",
-    "husky": "^1.3.1",
-    "istanbul": "^0.4.5",
-    "mocha": "^6.0.2",
-    "nyc": "^13.3.0",
-    "sinon": "^7.2.7",
-    "source-map-support": "^0.5.11",
-    "ts-node": "^8.0.3",
-    "tslint": "^5.14.0",
-    "typescript": "^3.3.3333"
+    "del-cli": "^3.0.0",
+    "husky": "^3.0.5",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "sinon": "^7.4.2",
+    "source-map-support": "^0.5.13",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3"
   },
   "dependencies": {
-    "@types/node": "^11.11.3"
+    "@types/node": "^12.7.5"
   }
 }
