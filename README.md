@@ -2,7 +2,10 @@
 
 [![Actions status](https://github.com/intocode-io/node-nested-set/workflows/build/badge.svg)](https://github.com/intocode-io/node-nested-set/actions)
 [![codecov](https://codecov.io/gh/intocode-io/node-nested-set/branch/master/graph/badge.svg)](https://codecov.io/gh/intocode-io/node-nested-set)
-[![Dependency Status](https://david-dm.org/intocode-io/node-nested-set.svg)](https://david-dm.org/intocode-io/node-nested-set)
+[![Version](https://img.shields.io/npm/v/@intocode-io/ts-nested-set.svg)](https://npmjs.com/package/@intocode-io/ts-nested-set)
+![NPM](https://img.shields.io/npm/l/@intocode-io/ts-nested-set)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/micksatana?locale.x=en_GB)
+
 
 ## Installation
 ```
